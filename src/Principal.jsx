@@ -1,5 +1,5 @@
 import React from 'react'
-
+import Usuario from './Usuario'
 const Principal = () => {
     return (
         <main style={{backgroundColor:'green'}}>
@@ -9,7 +9,9 @@ const Principal = () => {
                 <li>CSS</li>
                 <li>JavaScript</li>
             </ul>
+            <Usuario nombre='Juan' apellido = "Ramirez" />
         </main>
+
     )
 }
 

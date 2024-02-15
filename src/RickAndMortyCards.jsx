@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import './style.css'
-
+import { Link } from 'react-router-dom'
+import Header from './Header'
+import { useModo } from './UserProvider'
 
 const RickAndMortyCards = () => {
+    const {modo,cambiarModo} = useModo()
+
 
     const [characters, setCharacters]= useState([])
     
@@ -20,7 +24,22 @@ const RickAndMortyCards = () => {
     }, [])
     return (
         <>
+        <div >
+        <h1>Theme {modo ==='light' ? 'Claro':'Oscuro'}</h1>
+        <button onClick={cambiarModo}>Cambiar Modo</button>
+    
+        </div>
+
             <h1  className='title'> Rick And Morty</h1>
+        
+        <nav>
+            <ul>
+                <li>
+                    <Link to= '/about/head' >head</Link>
+                </li>
+            </ul>
+        </nav>
+        
             <div className='container'>
             <div className='cards-container'>
                 {characters.map(character =>(
